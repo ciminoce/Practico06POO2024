@@ -6,7 +6,7 @@ namespace Ejercicio01.Datos
     public class Equipo
     {
         private int cantidadJugadores;
-        private List<Jugador>? jugadores;
+        private List<Jugador> jugadores;
         private string nombre=null!;
         private Equipo()
         {
@@ -39,7 +39,7 @@ namespace Ejercicio01.Datos
             {
                 return false;
             }
-            if (e.GetCantidadJugadores()==0)
+            if (e.GetCantidad()==0)
             {
                 return false;
             }
@@ -60,7 +60,7 @@ namespace Ejercicio01.Datos
             sb.AppendLine($"Nombre Equipo:{e.nombre}");
             sb.AppendLine($"(Jugadores):");
             string jugadoresEquipo = string.Empty;
-            if (e.jugadores != null && e.jugadores.Any())
+            if (e.jugadores != null && e.jugadores.Count>0)
             {
                 jugadoresEquipo = string.Join(Environment.NewLine,
                     e.jugadores.Select(j => j.MostrarDatos()));
@@ -79,7 +79,7 @@ namespace Ejercicio01.Datos
             if (nombre != equipo.nombre) return false;
             
             if(GetCantidadJugadores()!=equipo.GetCantidadJugadores()) return false;
-
+            if(GetCantidad()!=equipo.GetCantidad()) return false;
             return nombre==equipo.nombre && 
                 GetCantidadJugadores()==equipo.GetCantidadJugadores() &&
                 jugadores.SequenceEqual(equipo.jugadores);
