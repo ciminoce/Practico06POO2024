@@ -1,7 +1,6 @@
 ﻿using Ejercicio01.Datos;
 using Ejercicio01.Entidades;
 using MiDLL;
-
 namespace Ejecicio01.Consola
 {
     internal class Program
